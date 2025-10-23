@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 19:11:46 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/23 19:14:19 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/10/23 19:35:39 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/10/23 19:35:41 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
+#include <stdio.h>
 
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int ft_isalpha(int c);
-#endif
+int ft_toupper

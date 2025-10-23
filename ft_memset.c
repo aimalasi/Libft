@@ -1,21 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 19:11:46 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/23 19:14:19 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/10/23 19:09:45 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/10/23 19:35:30 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int ft_isalpha(int c);
-#endif
+void    *memset(void *s, int c, size_t n)

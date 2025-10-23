@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 19:11:46 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/23 19:14:19 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/10/23 19:35:25 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/10/23 19:35:27 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
+#include <stdio.h>
 
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
+int ft_isprint (int i)
+{
+    if (i >= 32 && i <= 126)
+        return (1);
+    return (0);
+}
 
-int ft_isalpha(int c);
-#endif
+int main(void)
+{
+    printf("%d\n", ft_isprint('T'));
+    printf("%d\n", ft_isprint('\n'));
+    return (0);
+}
