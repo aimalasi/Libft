@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 19:09:45 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/24 19:55:23 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/10/24 20:07:42 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/10/24 20:16:05 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-
-void    *ft_memset(void *s, int c, size_t n)
+void    *ft_bzero(void *s, size_t n)
 {
     int i;
     unsigned char *t;
@@ -24,19 +22,17 @@ void    *ft_memset(void *s, int c, size_t n)
     t = (unsigned char*) s;
     while (i < n)
     {
-        t[i] = c;
+        t[i] = 0;
         i++;
     }
     return (t);
 }
 
-int main(void)
+/* int main(void)
 {
-    char *c = malloc(2);
-    c[2] = 0;
+    char *c = malloc(3);
+    c[0] = 'a';
     printf("%s\n", c);
-    memset(c, 'A', 100000);
+    ft_bzero(c, 3);
     printf("%s\n", c);
-    ft_memset(c, 'B', 3);
-    printf("%s\n", c);
-}
+} */
