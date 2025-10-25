@@ -18,5 +18,11 @@
 #include <unistd.h>
 #include <stdio.h>
 
+<<<<<<< HEAD
 int ft_isalpha(int c);
+=======
+// functions
+// void	ft_putstr(char *str);
+
+>>>>>>> 88c9bcf (LaptopSetup)
 #endif
