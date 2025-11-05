@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:35:25 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/23 19:35:27 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:31:15 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int ft_isprint (int i)
     return (0);
 }
 
-int main(void)
+/*int main(void)
 {
     printf("%d\n", ft_isprint('T'));
     printf("%d\n", ft_isprint('\n'));
     return (0);
-}
+}*/
