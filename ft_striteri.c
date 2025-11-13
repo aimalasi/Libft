@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 22:48:49 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/13 15:57:17 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/11/13 16:09:02 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/11/13 16:35:42 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi (const char *s, char (*f) (unsigned int, char))
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    char *result;
     unsigned int i;
 
     if (s == NULL || f == NULL)
-        return (NULL);
-    result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-    if (result == NULL)
-        return (NULL);
+        return;
     i = 0;
     while (s[i])
     {
-        result[i] = f(i, s[i]);
+        f(i, &s[i]);
         i++;
     }
-    result[i] = '\0';
-    return (result);
-}
-/* static char strmapi_tester(unsigned int i, char c)
-{
-    write (1, &c, 1);
-    return (c - 32);
 }
 
-int main(void)
+void	f(unsigned int i, char *s)
 {
-   printf("%s\n", ft_strmapi("teste", &strmapi_tester));
-   return (0);
+	printf("Indice %d: %c\n", i, *s);
+}
+
+/* int	main(void)
+{
+	char	s[] = "Hello World";
+
+	ft_striteri(s,f);
+
+	return (0);
 } */
