@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 19:48:02 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:33:38 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/11/14 14:38:10 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/11/14 17:22:40 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*res;
+	char	c;
 
-	res = (char *)s;
-	while (*res != c && *res != '\0')
-		res++;
-	return (res);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return (0);
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
 }
-/* int main (void)
+/* int main(void)
 {
-	char *c = "Hello";
-	printf("%s\n", c);
-	char *s = ft_strchr(c, 'e');
-	printf("%s\n", s);
+	ft_putnbr_fd(42, 1);
 } */

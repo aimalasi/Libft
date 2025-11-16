@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 19:48:02 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:33:38 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/11/14 14:25:13 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/11/14 17:19:49 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*res;
-
-	res = (char *)s;
-	while (*res != c && *res != '\0')
-		res++;
-	return (res);
+	if (s)
+	{
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
+	}
 }
 /* int main (void)
 {
-	char *c = "Hello";
-	printf("%s\n", c);
-	char *s = ft_strchr(c, 'e');
-	printf("%s\n", s);
+	ft_putendl_fd("Hello", 1);
 } */

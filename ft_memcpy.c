@@ -6,35 +6,34 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:45:19 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/25 19:47:05 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/14 16:26:33 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- void *ft_memcpy(void *dest, const void *src, size_t n)
- {
-    int i;
-    unsigned char *t;
-    unsigned char *u;
-
-    i = 0;
-    t = (unsigned char*) dest;
-    u = (unsigned char*) src;
-    while (i < n)
-    {
-        t[i] = u[i];
-        i++;
-    }
-    return (dest);
- }
-
-int main(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    char *c = malloc(4);
-    c[3] = '\0';
-    printf("%s\n", c);
-    ft_memcpy(c, "CBA", 3);
-    printf("%s\n", c);
-    free(c);
+	int				i;
+	unsigned char	*t;
+	unsigned char	*u;
+
+	i = 0;
+	t = (unsigned char *) dest;
+	u = (unsigned char *) src;
+	while (i < n)
+	{
+		t[i] = u[i];
+		i++;
+	}
+	return (dest);
 }
+/* int main(void)
+{
+	char *c = malloc(4);
+	c[3] = '\0';
+	printf("%s\n", c);
+	ft_memcpy(c, "CBA", 3);
+	printf("%s\n", c);
+	free(c);
+} */

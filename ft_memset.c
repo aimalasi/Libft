@@ -6,37 +6,31 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:09:45 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/24 19:55:23 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/14 17:17:40 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-
-void    *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    int i;
-    unsigned char *t;
-    
-    i = 0;
+	int				i;
+	unsigned char	*t;
 
-    t = (unsigned char*) s;
-    while (i < n)
-    {
-        t[i] = c;
-        i++;
-    }
-    return (t);
+	i = 0;
+	t = (unsigned char *) s;
+	while (i < n)
+	{
+		t[i] = c;
+		i++;
+	}
+	return (t);
 }
-
-int main(void)
+/* int main(void)
 {
-    char *c = malloc(2);
-    c[2] = 0;
-    printf("%s\n", c);
-    memset(c, 'A', 100000);
-    printf("%s\n", c);
-    ft_memset(c, 'B', 3);
-    printf("%s\n", c);
-}
+	char *c = malloc(2);
+	c[2] = 0;
+	printf("%s\n", c);
+	ft_memset(c, 'A', 3);
+	printf("%s\n", c);
+} */

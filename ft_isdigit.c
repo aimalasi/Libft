@@ -6,23 +6,23 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 17:50:21 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/10/23 18:01:45 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/14 15:40:51 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int ft_isdigit(int i)
+int	ft_isdigit(int i)
 {
-    if ((i >= '0') && (i <= '9'))
-        return (1);
-    return (0);
+	if ((i >= '0') && (i <= '9'))
+		return (1);
+	return (0);
 }
 
 /*int main(void)
 {
-    printf("%d\n", ft_isdigit('T'));
-    printf("%d\n", ft_isdigit('1'));
-    return (0);
+	printf("%d\n", ft_isdigit('T'));
+	printf("%d\n", ft_isdigit('1'));
+	return (0);
 }*/
