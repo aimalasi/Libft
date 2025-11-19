@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 23:37:54 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:29:12 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/18 21:18:22 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	count_segments(char const *s, char c)
 	return (count);
 }
 
-static size_t	segment_len(char const *s, char c)
+static	size_t	segment_len(char const *s, char c)
 {
 	size_t	len;
 
@@ -43,47 +43,42 @@ static size_t	segment_len(char const *s, char c)
 	return (len);
 }
 
-static char	*segment_dup(char const *s, size_t len)
+static char	*get_segment(char const *s, char c)
 {
-	char	*segment;
+	size_t	len;
 	size_t	i;
+	char	*segm;
 
-	segment = (char *)malloc(len + 1);
-	if (segment == NULL)
+	len = segment_len(s, c);
+	segm = malloc(len + 1);
+	if (segm == NULL)
 		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		segment[i] = s[i];
+		segm[i] = s[i];
 		i++;
 	}
-	segment[i] = '\0';
-	return (segment);
+	segm[i] = '\0';
+	return (segm);
 }
 
-static void	free_split(char **split, size_t segments)
+static void	*free_all(char **arr, size_t i)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < segments)
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
+	while (i--)
+		free(arr[i]);
+	free(arr);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	size_t	segments;
 	size_t	i;
 
 	if (s == NULL)
 		return (NULL);
-	segments = count_segments(s, c);
-	result = (char **)malloc(sizeof(char *) * (segments + 1));
+	result = malloc(sizeof(char *) * (count_segments(s, c) + 1));
 	if (result == NULL)
 		return (NULL);
 	i = 0;
@@ -93,12 +88,9 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			result[i] = segment_dup(s, segment_len(s, c));
+			result[i] = (get_segment(s, c));
 			if (result[i] == NULL)
-			{
-				free_split(result, i);
-				return (NULL);
-			}
+				return (free_all(result, i));
 			i++;
 			while (*s && *s != c)
 				s++;
@@ -107,12 +99,13 @@ char	**ft_split(char const *s, char c)
 	result[i] = NULL;
 	return (result);
 }
+
 /* int main(void)
 {
 	char **result;
 	int i;
 
-	result = ft_split("Hello wold test", ' ');
+	result = ft_split("Hello wold test", 'l');
 
 	i = 0;
 	while (result[i])
@@ -128,5 +121,5 @@ char	**ft_split(char const *s, char c)
 	}
 	free(result);
 
-	return 0;
+	return (0);
 } */

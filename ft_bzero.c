@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:07:42 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 15:28:18 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:24:44 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*t;
 
 	i = 0;

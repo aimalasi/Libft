@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 14:38:10 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:22:40 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:26:50 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
-		return (0);
+		return ;
 	}
 	if (n < 0)
 	{

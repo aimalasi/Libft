@@ -6,39 +6,41 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 22:32:27 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:36:53 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/18 20:14:24 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	get_len(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*joined;
-	size_t	len1;
-	size_t	len2;
 	size_t	i;
 	size_t	j;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	len1 = 0;
-	while (s1[len1] != '\0')
-		len1++;
-	len2 = 0;
-	while (s2[len2] != '\0')
-		len2++;
-	joined = (char *)malloc((len1 + len2 + 1));
+	joined = (char *)malloc(get_len(s1) + get_len(s2) + 1);
 	if (joined == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len1)
+	while (s1[i])
 	{
 		joined[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (j < len2)
+	while (s2[j])
 	{
 		joined[i + j] = s2[j];
 		j++;
@@ -46,6 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	joined[i + j] = '\0';
 	return (joined);
 }
+
 /* int main(void)
 {
 	char *result;

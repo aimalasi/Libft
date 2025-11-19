@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 18:58:39 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 16:12:00 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:19:50 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,9 @@ static int	count_digits(int n)
 static char	*handle_special(char *str, int n)
 {
 	if (n == 0)
-	{
-		str[0] = '0';
-		str[1] = '\0';
-		return (str);
-	}
-	strcpy(str, "-2147483648");
+		ft_strlcpy(str, "0", 2);
+	else
+		ft_strlcpy(str, "-2147483648", 12);
 	return (str);
 }
 
@@ -76,22 +73,21 @@ char	*ft_itoa(int n)
 	i = 0;
 	while (n != 0)
 	{
-		str[i] = (n % 10) + '0';
+		str[i++] = (n % 10) + '0';
 		n = n / 10;
 	}
 	if (sign)
-	{
 		str[i++] = '-';
-	}
 	str[i] = '\0';
 	reverse(str, i);
 	return (str);
 }
-/* int main(void)
-{
-	char* result;
 
-	result = ft_itoa(1234);
-	printf("%s\n", result);
-	free(result);
-} */
+// int main(void)
+// {
+// 	char* result;
+
+// 	result = ft_itoa(-2147483648);
+// 	printf("%s\n", result);
+// 	free(result);
+// }

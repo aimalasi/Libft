@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 21:30:17 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:12:03 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:25:51 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	copy_backward(unsigned char *d, const unsigned char *s, size_t n)
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
+	size_t				i;
 	unsigned char		*d;
 	const unsigned char	*s;
 
@@ -33,6 +34,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	d = (unsigned char *)dst;
 	if (n == 0 || dst == src)
 		return (dst);
+	i = 0;
 	if (s < d)
 	{
 		copy_backward(d, s, n);

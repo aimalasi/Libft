@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 18:17:02 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/19 22:18:41 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/11/18 19:12:26 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/11/18 22:27:04 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*res;
-	char	*last;
+	char	*out;
+	size_t	i;
 
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
-	last = NULL;
-	res = (char *)s;
-	while (*res)
-	{
-		if ((unsigned char)*res == (unsigned char)c)
-			last = res;
-		res++;
-	}
-	return (last);
-}
-
-int main (void)
-{
-	printf("%s\n", ft_strrchr("Hello", 1024));
-	printf("%s\n", strrchr("Hello", 1024));
-
+	out = malloc(nmemb * size);
+	if (out == NULL)
+		return (NULL);
+	i = 0;
+	while (i < nmemb * size)
+		out[i++] = '\0';
+	return ((void *)out);
 }

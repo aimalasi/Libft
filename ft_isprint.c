@@ -6,12 +6,11 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 19:35:25 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 15:41:36 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:42:29 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isprint(int i)
 {

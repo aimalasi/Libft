@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:45:19 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 16:26:33 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:34:18 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*t;
 	unsigned char	*u;
 
@@ -28,12 +28,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/* int main(void)
-{
-	char *c = malloc(4);
-	c[3] = '\0';
-	printf("%s\n", c);
-	ft_memcpy(c, "CBA", 3);
-	printf("%s\n", c);
-	free(c);
-} */
+
+// int main(void)
+// {
+// 	char *c = malloc(4);
+// 	printf("%s\n", c);
+// 	ft_memcpy(c, "CasdBA", 3);
+// 	printf("%s\n", c);
+// 	free(c);
+// }

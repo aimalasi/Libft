@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:09:02 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:34:40 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:26:25 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	if (s == NULL || f == NULL)
-		return (0);
+		return ;
 	i = 0;
 	while (s[i])
 	{
@@ -26,10 +26,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 }
 
-void	f(unsigned int i, char *s)
-{
-	printf("Indice %d: %c\n", i, *s);
-}
+// void	f(unsigned int i, char *s)
+// {
+// 	printf("Indice %d: %c\n", i, *s);
+// }
 /* int	main(void)
 {
 	char	s[] = "Hello World";

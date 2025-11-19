@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 18:17:02 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/19 22:18:41 by aimalasi         ###   ########.fr       */
+/*   Created: 2025/11/18 19:22:44 by aimalasi          #+#    #+#             */
+/*   Updated: 2025/11/18 19:44:30 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-	char	*res;
-	char	*last;
+	char	*dup;
+	size_t	len;
+	size_t	i;
 
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
-	last = NULL;
-	res = (char *)s;
-	while (*res)
+	len = 0;
+	while (s[len])
+		len++;
+	dup = (char *)ft_calloc(sizeof(char), len + 1);
+	if (dup == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		if ((unsigned char)*res == (unsigned char)c)
-			last = res;
-		res++;
+		dup[i] = s[i];
+		i++;
 	}
-	return (last);
-}
-
-int main (void)
-{
-	printf("%s\n", ft_strrchr("Hello", 1024));
-	printf("%s\n", strrchr("Hello", 1024));
-
+	dup[i] = '\0';
+	return (dup);
 }

@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 21:51:34 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/14 17:47:55 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:26:24 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] != '\0' && ft_isinset(s1[start], set))
 		start++;
-	end = 0;
-	while (s1[end] != '\0')
-		end++;
+	end = ft_strlen(s1);
 	while (end > start && ft_isinset(s1[end - 1], set))
 		end--;
-	trimmed = (char *)malloc(end - start +1);
+	trimmed = (char *)ft_calloc(sizeof(char), end - start +1);
 	if (trimmed == NULL)
 		return (NULL);
 	i = 0;
@@ -53,14 +51,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 		start++;
 	}
-	trimmed[i] = '\0';
 	return (trimmed);
 }
+
 // int main(void)
 // {
 //     char *result;
 
-//     result = ft_strtrim("xxxxHelloxxx", "x");
+//     result = ft_strtrim("xxxxHelloxxx", "");
 //     printf("%s\n", result);
-	// free(result);
+// 	free(result);
 // }
