@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 19:22:44 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/18 19:44:30 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/21 20:47:06 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,9 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
+
+/* int	main(void)
+{
+	printf("%s\n", ft_strdup("Hello World!!!"));
+	return (0);
+} */
