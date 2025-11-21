@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 18:17:02 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/19 22:18:41 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/21 18:49:15 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*res;
-	char	*last;
+	int	size;
 
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
-	last = NULL;
-	res = (char *)s;
-	while (*res)
+	size = 0;
+	while (s[size])
+		size++;
+	while (size >= 0)
 	{
-		if ((unsigned char)*res == (unsigned char)c)
-			last = res;
-		res++;
+		if (s[size] == (char)c)
+			return ((char *)&s[size]);
+		size--;
 	}
-	return (last);
+	return (NULL);
 }
 
-int main (void)
+/*int main (void)
 {
 	printf("%s\n", ft_strrchr("Hello", 1024));
 	printf("%s\n", strrchr("Hello", 1024));
 
-}
+}*/
