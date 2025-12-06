@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 22:32:27 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/21 20:42:52 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/23 21:52:24 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-	if (s1 == NULL && s2 == NULL)
+	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));

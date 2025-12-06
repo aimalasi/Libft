@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 21:30:17 by aimalasi          #+#    #+#             */
-/*   Updated: 2025/11/18 22:25:51 by aimalasi         ###   ########.fr       */
+/*   Updated: 2025/11/23 22:31:19 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	s = (unsigned char *)src;
 	d = (unsigned char *)dst;
-	if (n == 0 || dst == src)
-		return (dst);
 	i = 0;
 	if (s < d)
 	{
@@ -51,19 +49,26 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/* int main(void)
-{
-	char    src[] = "Katerina";
-	char    dst[10];
-	ft_memmove(dst, src, 8);
-	printf("%s\n", dst);
 
-	char    src2[] = "Katerina";
-	char    dst2[10] = "Hello";
-	ft_memmove(dst2, src2, 10);
-	printf("\n");
-	memmove(src2, dst2, 9);
-	printf("%s\n", dst2);
+// int main(void)
+// {
+// char    *src = NULL;
 
-	return 0;
-} */
+// memmove(src, src, 8);
+// ft_memmove(src, src, 8);
+// printf("11111111");
+
+// ft_memmove(dst, src, 10);
+// printf("%s\n", dst);
+
+// char    src2[8] = "Katerina";
+
+// ft_memmove(src2 + 3, src2, 5);
+// printf("%s\n", src2);
+
+// char    src3[8] = "Katerina";
+
+// ft_memmove(src3, src3 + 3, 5);
+// printf("%s\n", src3);
+// return (0);
+// }
